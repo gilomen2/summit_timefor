@@ -8,9 +8,10 @@ local myData = application.get_data()
 -- local decodedString = json:decode(myData)
 -- print(inspect(decodedString))
 
-local name = myData.name
+local contactName = myData.contactName
+local senderName = myData.senderName
 local message = myData.message
 
 channel.answer()
-channel.say('This message is for ' .. name .. '. ' .. message)
+channel.say('This is an automated message for ' .. contactName .. ' from ' .. senderName .. '. ' .. message)
 channel.hangup()
