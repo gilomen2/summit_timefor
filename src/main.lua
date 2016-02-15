@@ -4,13 +4,13 @@ local json = require 'json'
 local inspect = require 'inspect'
 local application = require("summit.application")
 local myData = application.get_data()
--- local myData = '{"name":"Beth","message":"This is the message."}'
-local decodedString = json:decode(myData)
+-- local myData = "{\"message\": \"This is my message from Postman.\", \"name\": \"Beth\"}"
+-- local decodedString = json:decode(myData)
+-- print(inspect(decodedString))
 
-
-local name = decodedString.name
-local message = decodedString.message
+local name = myData.name
+local message = myData.message
 
 channel.answer()
-channel.say('This message is for'.. name .. '. ' .. message)
+channel.say('This message is for ' .. name .. '. ' .. message)
 channel.hangup()
